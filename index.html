@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Doodle Box Toy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fce4ec;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        /* This creates your cute popup window box with a single-line border */
+        .doodle-box {
+            background-color: white;
+            border: 2px solid #ff4081; /* Clean single-line pink border */
+            border-radius: 15px;      /* Soft rounded corners */
+            padding: 30px;
+            width: 400px;
+            text-align: center;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Gives it a floating popup effect */
+        }
+        .decoration {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #ffccd5;
+            color: #d81b60;
+            border: 1px solid #ff4081;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        button:hover {
+            background-color: #ff4081;
+            color: white;
+        }
+        #charmDisplay {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="doodle-box">
+        <!-- Cute top decoration -->
+        <div class="decoration">🎀 ✨ 🎀</div>
+        
+        <h1>Welcome to Doodle Box Toy</h1>
+        <p>Click the button below to discover a cute surprise!</p>
+        
+        <button onclick="showRandomCharm()">Pick a Charm</button>
+        
+        <!-- Display area for our random charms or GIFs -->
+        <div id="charmDisplay"></div>
+
+        <!-- Cute bottom decoration -->
+        <div class="decoration" style="margin-top: 20px;">🍓 🧸 🍓</div>
+    </div>
+
+    <script>
+        function showRandomCharm() {
+            const charms = [
+                "🎀 Pink Ribbon: You are doing amazing today!",
+                "🌸 Cherry Blossom: Keep blooming at your own pace!",
+                "⭐ Lucky Star: A little extra sparkle for you!",
+                "🧸 Teddy Bear: Sending a cozy hug!",
+                '<img src="https://giphy.com/gifs/hello-kitty-cute-kZqbBT64ECtjy" width="120px" alt="Cute GIF" style="margin-top:10px; border-radius:10px;">'
+            ];
+            
+            const randomIndex = Math.floor(Math.random() * charms.length);
+            document.getElementById("charmDisplay").innerHTML = charms[randomIndex];
+        }
+    </script>
+
+</body>
+</html>
